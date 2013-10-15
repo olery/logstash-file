@@ -16,6 +16,17 @@ logging message. See below for more information.
 
 * Ruby 1.9.3 or newer
 
+## Supported Rubies
+
+* Ruby 1.9.3
+* Ruby 2.x
+* Jruby 1.7 and newer
+* Rubinius 2.0 and newer
+
+Tests are ran on both Travis CI as well as the private Jenkins instance of
+[Olery][olery]. Although this Gem may work on Ruby 1.8 we have not verified
+this nor do we intend to.
+
 ## Usage
 
 First install the Gem:
@@ -38,3 +49,5 @@ Basic logging is as following:
 The source code of this repository and logstash-file itself are licensed under
 the MIT license unless specified otherwise. A copy of this license can be found
 in the file "LICENSE" in the root directory of this repository.
+
+[olery]: http://olery.com/
