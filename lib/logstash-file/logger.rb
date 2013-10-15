@@ -28,6 +28,13 @@ module LogstashFile
       @mutex  = Mutex.new
     end
 
+    ##
+    # Closes the associated stream.
+    #
+    def close
+      @handle.close
+    end
+
     [:info, :error, :warning, :debug].each do |level|
       define_method(level) do |message, fields = {}|
         log(message, fields.merge(:level => level))

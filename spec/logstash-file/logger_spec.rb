@@ -53,4 +53,16 @@ describe LogstashFile::Logger do
 
     lines.length.should == amount
   end
+
+  example 'create a logger using a filepath' do
+    file   = Tempfile.new('logstash-file')
+    logger = LogstashFile::Logger.new(file.path)
+
+    logger.info('testing')
+    logger.close
+
+    output = read_output(file)
+
+    output['@message'].should == 'testing'
+  end
 end
