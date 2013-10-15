@@ -27,6 +27,10 @@ Tests are ran on both Travis CI as well as the private Jenkins instance of
 [Olery][olery]. Although this Gem may work on Ruby 1.8 we have not verified
 this nor do we intend to.
 
+Rubinius support will be properly evaluated once Travis CI and our internal
+Jenkins instance have been updated so that they contain the latest Rubinius
+versions. Having said that, this Gem should just work fine in theory.
+
 ## Usage
 
 First install the Gem:
