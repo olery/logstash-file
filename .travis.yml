@@ -4,7 +4,7 @@ script: rake
 rvm:
   - 1.9.3
   - 2.0.0
-  - 2.1.0
+  - 2.1.0-preview1
   - jruby
   - jruby-head
   - jruby-1.7.4
