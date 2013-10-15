@@ -35,14 +35,21 @@ describe LogstashFile::Logger do
   end
 
   # Half-assed test to ensure that multiple entries are actually written on
-  # separate lines. It doesn't *actually* test thread-safety though, that's a
-  # pretty difficult thing to test reliably.
+  # separate lines.
   example 'synchronize multi-threaded operations' do
     amount  = 50
     threads = []
 
+    # Create the logger before using it amongst the different threads. Without
+    # doing so we'd also have to wrap a mutex around the `let` block access.
+    logger = self.logger
+
     amount.times do |n|
-      threads << Thread.new { logger.info("thread #{n}") }
+      thread = Thread.new { logger.info("thread #{n}") }
+
+      thread.abort_on_exception = true
+
+      threads << thread
     end
 
     threads.each(&:join)
