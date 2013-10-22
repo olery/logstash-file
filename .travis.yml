@@ -8,11 +8,8 @@ rvm:
   - jruby
   - jruby-head
   - jruby-1.7.4
-
-  # Rubinius is disabled for the time being as Travis CI hasn't updated yet to
-  # Rubinius 2.0 (as far as I'm aware of).
-  #- rbx
-  #- rbx-head
+  - rbx-2.1.1
+  - rbx-head
 
 notifications:
   email:
