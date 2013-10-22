@@ -21,15 +21,11 @@ logging message. See below for more information.
 * Ruby 1.9.3
 * Ruby 2.x
 * Jruby 1.7 and newer
-* Rubinius 2.0 and newer
+* Rubinius 2.0 and newer, 2.1 or newer is recommended
 
 Tests are ran on both Travis CI as well as the private Jenkins instance of
 [Olery][olery]. Although this Gem may work on Ruby 1.8 we have not verified
 this nor do we intend to.
-
-Rubinius support will be properly evaluated once Travis CI and our internal
-Jenkins instance have been updated so that they contain the latest Rubinius
-versions. Having said that, this Gem should just work fine in theory.
 
 ## Usage
 
