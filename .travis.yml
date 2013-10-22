@@ -9,7 +9,6 @@ rvm:
   - jruby-head
   - jruby-1.7.4
   - rbx-2.1.1
-  - rbx-head
 
 notifications:
   email:
