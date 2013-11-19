@@ -58,7 +58,10 @@ module LogstashFile
     # @param [Hash] hash
     #
     def write(hash)
-      @mutex.synchronize { @handle.puts(JSON(hash)) }
+      @mutex.synchronize do
+        @handle.puts(JSON(hash))
+        @handle.flush
+      end
     end
   end # Logger
 end # LogstashFile
