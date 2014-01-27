@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 require 'spec_helper'
 
 describe LogstashFile::Logger do
@@ -71,5 +73,13 @@ describe LogstashFile::Logger do
     output = read_output(file)
 
     output['@message'].should == 'testing'
+  end
+
+  example 'writing UTF8 data' do
+    logger.info('helló'.force_encoding(Encoding::UTF_8))
+
+    output = read_output(buffer)
+
+    output['@message'].should == 'helló'
   end
 end
